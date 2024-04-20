@@ -1,5 +1,5 @@
 return {
-  "andweeb/presence.nvim",
-  event = "BufRead",
-  config = true,
+	"andweeb/presence.nvim",
+	event = "VeryLazy",
+	config = true,
 }

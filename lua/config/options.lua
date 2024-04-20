@@ -1,6 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.mouse = "a"
+vim.opt.mouse = "nv"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -11,11 +11,17 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = "menuone,noselect"
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.conceallevel = 3
+vim.opt.guifont = "JetBrainsMono Nerd Font:h12"
+vim.opt.title = true
+-- vim.opt.titlestring = [[%{v:progname} %f %h%m%r%w]]
+vim.opt.titlestring = [[%{v:progname} %f]]
 
+vim.g.vimtex_view_method = 'zathura'
+vim.g.node_host_prog = '/home/polnio/.nvm/versions/node/v21.6.1/bin/node'
 -- vim.g.root_spec = { ".git", "lsp", { "lua", "CMakeLists.txt" }, "cwd" }
-
-vim.cmd.colorscheme "catppuccin"
