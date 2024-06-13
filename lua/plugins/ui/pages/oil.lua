@@ -5,5 +5,7 @@ return {
     default_file_explorer = true,
   },
   event = "VimEnter",
-  -- cmd = "Oil"
+  cmd = "Oil",
+
+  keys = { { '-', "<cmd>Oil<cr>", { silent = true } } }
 }

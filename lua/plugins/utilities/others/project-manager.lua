@@ -1,5 +1,6 @@
 return {
   "charludo/projectmgr.nvim",
+  enabled = false,
   config = true,
   event = "VeryLazy",
   keys = {

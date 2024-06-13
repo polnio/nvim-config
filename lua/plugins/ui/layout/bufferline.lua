@@ -15,8 +15,8 @@ return {
 		]]
   end,
   keys = {
-    { "[b", ":bp<cr>", desc = "Previous buffer", silent = true },
-    { "]b", ":bn<cr>", desc = "Next buffer", silent = true },
+    -- { "[b", ":bp<cr>", desc = "Previous buffer", silent = true },
+    -- { "]b", ":bn<cr>", desc = "Next buffer", silent = true },
     {
       "<leader>bf",
       function()
@@ -25,8 +25,8 @@ return {
       desc = "Find buffer",
       silent = true,
     },
-    { "<leader>bb", ":b#<cr>", desc = "Last buffer", silent = true },
-    { "<leader>bd", ":bd<cr>", desc = "Delete buffer", silent = true },
+    -- { "<leader>bb", ":b#<cr>",  desc = "Last buffer",   silent = true },
+    { "<leader>bd", ":bd<cr>",  desc = "Delete buffer", silent = true },
     { "<leader>bD", ":%bd<cr>", desc = "Delete buffer", silent = true },
   },
 }

@@ -12,35 +12,39 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Switch to left window", silent 
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Switch to right window", silent = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Switch to below window", silent = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Switch to above window", silent = true })
+vim.keymap.set("n", "<leader>a", "gg0vG$", { desc = "Select All" })
+vim.keymap.set("n", "<leader>h", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hint" })
 
 vim.keymap.set("i", "<C-e>", function()
-	print(vim.api.nvim_eval("typst#in_math()"))
+  print(vim.api.nvim_eval("typst#in_math()"))
 end, {})
 
 vim.keymap.set("n", "<leader>t", function()
-	vim.loop.spawn("kitty", {
-		args = { "-d", vim.fn.getcwd() },
-	})
+  vim.loop.spawn("kitty", {
+    args = { "-d", vim.fn.getcwd() },
+  })
 end, { desc = "Open terminal" })
 
 require("which-key").register {
-	-- ['<leader>c'] = { name = 'Code', _ = 'which_key_ignore' },
-	-- ['<leader>d'] = { name = 'Document', _ = 'which_key_ignore' },
-	-- ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
-	-- ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
-	-- ['<leader>r'] = { name = 'Rename', _ = 'which_key_ignore' },
-	-- ['<leader>s'] = { name = 'Search', _ = 'which_key_ignore' },
-	-- ['<leader>w'] = { name = 'Workspace', _ = 'which_key_ignore' },
-	["<leader>b"] = { name = "Buffers", _ = "which_key_ignore" },
-	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
-	["<leader>l"] = { name = "LSP", _ = "which_key_ignore" },
+  -- ['<leader>c'] = { name = 'Code', _ = 'which_key_ignore' },
+  -- ['<leader>d'] = { name = 'Document', _ = 'which_key_ignore' },
+  -- ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
+  -- ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
+  -- ['<leader>r'] = { name = 'Rename', _ = 'which_key_ignore' },
+  -- ['<leader>s'] = { name = 'Search', _ = 'which_key_ignore' },
+  -- ['<leader>w'] = { name = 'Workspace', _ = 'which_key_ignore' },
+  ["<leader>b"] = { name = "Buffers", _ = "which_key_ignore" },
+  ["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
+  ["<leader>l"] = { name = "LSP", _ = "which_key_ignore" },
 }
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })

@@ -22,6 +22,7 @@ return {
       svelte = { "eslint_d" },
       astro = { "eslint_d" },
       python = { "pylint" },
+      vala = { "vala_lint" },
     }
 
     lint.linters.cppcheck.args = {
