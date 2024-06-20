@@ -135,8 +135,20 @@ return {
     }
   end,
   keys = {
-    { "[d", vim.diagnostic.goto_prev, desc = "Go to previous diagnostic" },
-    { "]d", vim.diagnostic.goto_next, desc = "Go to next diagnostic" },
+    {
+      "[d",
+      function()
+        vim.diagnostic.goto_prev()
+      end,
+      desc = "Go to previous diagnostic"
+    },
+    {
+      "]d",
+      function()
+        vim.diagnostic.goto_next()
+      end,
+      desc = "Go to next diagnostic",
+    },
 
     --[[ { "gd", vim.lsp.buf.definition, desc = "Go to definition" },
     { "gi", vim.lsp.buf.implementation, desc = "Go to implementation" },
@@ -168,9 +180,21 @@ return {
       end,
     },
 
-    { "K",          vim.lsp.buf.hover,         desc = "Hover" },
+    {
+      "K",
+      function()
+        vim.lsp.buf.hover()
+      end,
+      desc = "Hover",
+    },
 
-    { "<leader>ld", vim.diagnostic.open_float, desc = "Show diagnostic" },
+    {
+      "<leader>ld",
+      function()
+        vim.diagnostic.open_float()
+      end,
+      desc = "Show diagnostic",
+    },
     {
       "<leader>lD",
       function()
@@ -178,7 +202,20 @@ return {
       end,
       desc = "Open diagnostics list",
     },
-    { "<leader>la", vim.lsp.buf.code_action, mode = { "n", "v" },   desc = "Code Actions" },
-    { "<leader>lr", vim.lsp.buf.rename,      desc = "Rename Symbol" },
+    {
+      "<leader>la",
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      mode = { "n", "v" },
+      desc = "Code Actions",
+    },
+    {
+      "<leader>lr",
+      function()
+        vim.lsp.buf.rename()
+      end,
+      desc = "Rename Symbol",
+    },
   },
 }
