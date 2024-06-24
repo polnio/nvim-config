@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.5",
   dependencies = {
     "nvim-lua/popup.nvim",
     "nvim-lua/plenary.nvim",
@@ -12,11 +11,11 @@ return {
     local telescope = require "telescope"
 
     telescope.setup {
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown {},
+      defaults = {
+        sorting_strategy = "ascending",
+        layout_config = {
+          horizontal = { prompt_position = "top" },
         },
-        zoxide = {}
       },
     }
 
