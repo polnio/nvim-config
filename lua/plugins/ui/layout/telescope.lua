@@ -5,6 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
     "jvgrootveld/telescope-zoxide",
+    "folke/noice.nvim",
   },
   event = "VeryLazy",
   config = function()
@@ -21,6 +22,7 @@ return {
 
     telescope.load_extension "ui-select"
     telescope.load_extension "zoxide"
+    telescope.load_extension "noice"
   end,
   keys = {
     {
