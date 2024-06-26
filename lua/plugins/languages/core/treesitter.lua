@@ -10,6 +10,7 @@ return {
       ensure_installed = {
         "vim",
         "lua",
+        "regex",
         "nix",
         "c",
         "cpp",

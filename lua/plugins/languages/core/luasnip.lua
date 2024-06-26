@@ -1,5 +1,6 @@
 return {
   "L3MON4D3/LuaSnip",
+  build = "make install_jsregexp",
   init = function()
     require("luasnip").config.set_config { -- Setting LuaSnip config
       enable_autosnippets = true,

@@ -24,4 +24,5 @@ vim.opt.titlestring = [[%{v:progname} %f]]
 
 vim.g.vimtex_view_method = 'zathura'
 vim.g.node_host_prog = '/home/polnio/.nvm/versions/node/v21.6.1/bin/node'
+vim.g.loaded_ruby_provider = 0
 -- vim.g.root_spec = { ".git", "lsp", { "lua", "CMakeLists.txt" }, "cwd" }
