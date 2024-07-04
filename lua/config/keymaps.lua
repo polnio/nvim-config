@@ -13,9 +13,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Switch to right window", silent
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Switch to below window", silent = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Switch to above window", silent = true })
 vim.keymap.set("n", "<leader>a", "gg0vG$", { desc = "Select All" })
-vim.keymap.set("n", "<leader>h", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "Toggle inlay hint" })
 
 vim.keymap.set("i", "<C-e>", function()
   print(vim.api.nvim_eval("typst#in_math()"))

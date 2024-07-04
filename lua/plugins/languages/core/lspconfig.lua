@@ -34,6 +34,9 @@ return {
             maxPreload = 100000,
             preloadFileSize = 10000,
           },
+          hint = {
+            enable = true,
+          },
         },
       },
     }
@@ -58,6 +61,17 @@ return {
       capabilities = capabilities,
     }
 
+    local js_hint = {
+      includeInlayParameterNameHints = 'all',
+      includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+      includeInlayFunctionParameterTypeHints = true,
+      includeInlayVariableTypeHints = true,
+      includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+      includeInlayPropertyDeclarationTypeHints = true,
+      includeInlayFunctionLikeReturnTypeHints = true,
+      includeInlayEnumMemberValueHints = true,
+    }
+
     lspconfig.tsserver.setup {
       capabilities = capabilities,
       init_options = {
@@ -70,6 +84,8 @@ return {
         },
       },
       filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
+      javascript = { inlayHints = js_hint },
+      typescript = { inlayHints = js_hint },
     }
 
     lspconfig.svelte.setup {
@@ -117,6 +133,11 @@ return {
         ["rust-analyzer"] = {
           cargo = {
             allFeatures = true,
+          },
+          inlayHints = {
+            chainingHints = true,
+            parameterHints = true,
+            typeHints = true,
           },
         },
       },
@@ -217,5 +238,12 @@ return {
       end,
       desc = "Rename Symbol",
     },
+    {
+      "<leader>lh",
+      function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end,
+      desc = "Toggle inlay hint",
+    }
   },
 }

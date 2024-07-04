@@ -8,7 +8,19 @@ return {
     vim.o.foldenable = true
   end,
   keys = {
-    { "zR", require("ufo").openAllFolds },
-    { "zM", require("ufo").openAllFolds },
+    {
+      "zR",
+      function()
+        require("ufo").openAllFolds()
+      end,
+      desc = "Open all folds",
+    },
+    {
+      "zM",
+      function()
+        require("ufo").openAllFolds()
+      end,
+      desc = "Close all folds",
+    },
   },
 }
