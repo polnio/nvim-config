@@ -36,6 +36,7 @@ return {
         "vala",
         -- "latex",
         "norg",
+        "dart",
       },
       highlight = { enable = true },
       indent = { enable = true },
