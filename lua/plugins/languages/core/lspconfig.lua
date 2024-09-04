@@ -134,6 +134,9 @@ return {
           cargo = {
             allFeatures = true,
           },
+          checkOnSave = {
+            command = "clippy",
+          },
           inlayHints = {
             chainingHints = true,
             parameterHints = true,
